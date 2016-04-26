@@ -22,7 +22,6 @@ public class TrialDivisionPrimeNumberCalculator implements PrimeNumberCalculator
         IntStream.range(2, number)
                 .filter(x->IntStream.rangeClosed(2, (int)(Math.sqrt(x))).allMatch(n->x%n != 0))
                 .forEach(primes::add);
-        Collections.sort(primes);
         return primes;
     }
 
