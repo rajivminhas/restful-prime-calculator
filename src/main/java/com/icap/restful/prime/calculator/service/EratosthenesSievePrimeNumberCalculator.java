@@ -2,6 +2,7 @@ package com.icap.restful.prime.calculator.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.IntStream;
 
 /**
@@ -9,8 +10,11 @@ import java.util.stream.IntStream;
  */
 public class EratosthenesSievePrimeNumberCalculator implements PrimeNumberCalculator {
 
+    private static Logger LOG = Logger.getLogger(EratosthenesSievePrimeNumberCalculator.class.getName());
+
     @Override
     public List<Integer> calculatePrimes(Integer number) {
+        LOG.info("Calculating primes by Eratosthenes Sieve.....");
         //create array with index as numbers and value as indicative of prime
         boolean[] primes = new boolean[number];
         IntStream.range(2, number).forEach(x->primes[x]=true);

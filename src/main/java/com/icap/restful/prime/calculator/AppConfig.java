@@ -1,5 +1,6 @@
 package com.icap.restful.prime.calculator;
 
+import com.icap.restful.prime.calculator.service.EratosthenesSievePrimeNumberCalculator;
 import com.icap.restful.prime.calculator.service.PrimeNumberCalculator;
 import com.icap.restful.prime.calculator.service.TrialDivisionPrimeNumberCalculator;
 import org.springframework.context.annotation.Bean;
@@ -14,5 +15,10 @@ public class AppConfig {
     @Bean
     public PrimeNumberCalculator primeCalculatorByDivision(){
         return new TrialDivisionPrimeNumberCalculator();
+    }
+
+    @Bean
+    public PrimeNumberCalculator primeCalculatorByEratosthenesSieve(){
+        return new EratosthenesSievePrimeNumberCalculator();
     }
 }
